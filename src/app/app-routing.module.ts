@@ -11,10 +11,9 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  }
+  { path: 'shoping-cart', loadChildren: './shoping-cart/shoping-cart.module#ShopingCartPageModule' },
+  { path: 'flowers', loadChildren: './flowers/flowers.module#FlowersPageModule' },
+  { path: 'modal', loadChildren: './modal/modal.module#ModalPageModule' }
 ];
 
 @NgModule({

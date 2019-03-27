@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/flowers"></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of selectedItems" lines="inset">
+      <ion-thumbnail slot="start">
+          <img src="https://via.placeholder.com/300x300">
+      </ion-thumbnail>      
+      <ion-label>
+        <h3>{{item.cat}} {{ item.name }}</h3>
+        <p>{{ item.price | currency:'USD':'symbol' }} </p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" (click)="agregar(item)"><ion-icon name="add-circle-outline" ></ion-icon> </ion-button>
+        <ion-label> {{ item.count }}</ion-label>
+        <ion-button  [disabled]="!item.show"  fill="clear" (click)="quitar(item)"><ion-icon name="remove-circle-outline"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item>
+      Total: <span slot="end">{{ total | currency:'USD':'symbol' }}</span>
+    </ion-item>
+  </ion-list>
+  <ion-button>comprame</ion-button>
+</ion-content>

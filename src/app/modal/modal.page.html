@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>{{categoria.category}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let product of categoria.products">
+    <ion-card-header>
+      <ion-card-title text-center>
+        {{ product.name }}          
+        <ion-card-subtitle>
+          ${{ product.price }}
+        </ion-card-subtitle>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content text-center>
+      <img src="https://via.placeholder.com/300x300">
+      <ion-button color="tertiary" id="botonCompra" (click)="addToCart(product); presentToast(product)" shape="round">Add to Cart</ion-button>
+    </ion-card-content>        
+  </ion-card>    
+</ion-content>

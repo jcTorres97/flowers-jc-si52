@@ -1,44 +1,89 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      DreamingFlowers!
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()">
+        <ion-icon name="flower" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/shapes.svg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Resources</ion-label>
-      </ion-list-header>
-      <ion-item href="https://ionicframework.com/docs/">
-        <ion-icon slot="start" color="medium" name="book"></ion-icon>
-        <ion-label>Ionic Documentation</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
-      </ion-item>
-    </ion-list>
+<ion-content >
+  <div style="background-color: #f5f5f5 ">
+  <ion-img src="/assets/flores.png"></ion-img> 
+  <ion-grid >
+    <ion-row style="padding:0px">
+      <ion-col style="padding:0px">
+        <ion-card class="col-sm-6" style="margin: 3px;">  
+          <ion-card-header>
+            <ion-card-title>Arreglo 1</ion-card-title>        
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img class="imgAr" src="/assets/Arreglos/arreglo1.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col style="padding:0px">
+        <ion-card style="margin: 3px;">  
+          <ion-card-header>
+            <ion-card-title>Arreglo 2</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img class="imgAr" src="/assets/Arreglos/arreglo2.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col style="padding:0px">
+        <ion-card style="margin: 3px; width: 133px;">  
+          <ion-card-header>
+            <ion-card-title>Arreglo 3</ion-card-title>        
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img class="imgAr" src="/assets/Arreglos/arreglo3.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col style="padding:0px">
+        <ion-card style="margin: 3px; width: 133px;">  
+          <ion-card-header>
+            <ion-card-title>Arreglo 4</ion-card-title>        
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img class="imgAr" src="/assets/Arreglos/arreglo4.png"></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <h1>Slide 1</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 2</h1>
+    </ion-slide>
+    <ion-slide>
+      <h1>Slide 3</h1>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-button (click)="locate()">Get Current Location</ion-button>
+
+  <p>{{data}}</p>
+
+  <ion-button (click)="direccionCercana()">Floreria Cercana</ion-button>
+  <div *ngFor="let dir of km" class="category-block">
+      <p>Floreria {{dir.nombre}} a {{dir.distancia}} km de distancia</p>
+  </div>
+</div>
 </ion-content>

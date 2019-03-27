@@ -1,0 +1,31 @@
+ion-slides {
+    background-color: #e4b88f;
+}
+
+ion-card{
+    background-color: #fbfbfb;
+}
+ion-badge {
+    background:#e4b88f;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 100%;
+}
+ 
+.category-block {
+    border-bottom: 1px solid #e4b88f;
+    
+}
+ 
+.category-banner {
+    border-left: 8px solid #e4b88f;
+    background: var(--ion-color-light);
+    height: 60px;
+    font-weight: 400;
+}
+
+#botonCompra{
+    margin-top: 15px;
+}
